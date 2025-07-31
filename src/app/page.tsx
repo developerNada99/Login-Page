@@ -62,7 +62,7 @@ export default function Home() {
                 className="w-64 h-64 mx-auto bg-white/20 rounded-full backdrop-blur-sm flex items-center justify-center"
               >
                 <img 
-                  src={isLogin ? "/pho1.jpg" : "/pho.jpg"} 
+                  src={isLogin ? "/pho1.jpg" : "/pho2.jpg"} 
                   alt={isLogin ? "Login Illustration" : "Signup Illustration"}
                   className="w-full h-full rounded-full "
                 />
