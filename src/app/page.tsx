@@ -20,7 +20,6 @@ export default function Home() {
     )
   }
 
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 }
@@ -32,17 +31,17 @@ export default function Home() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+    <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-4">
       <motion.div 
-        className="flex w-full max-w-4xl mx-4 bg-white rounded-xl shadow-2xl overflow-hidden"
+        className="flex flex-col md:flex-row w-full max-w-4xl bg-white rounded-xl shadow-2xl overflow-hidden"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
         transition={{ duration: 0.5 }}
       >
         {/* Image Section */}
-        <div className={`hidden md:flex w-1/2 bg-gradient-to-br from-indigo-600 to-purple-600 relative ${isLogin ? 'order-first' : 'order-last'}`}>
-          <div className="absolute inset-0 flex items-center justify-center p-8">
+        <div className={`relative flex w-full max-lg:p-16 md:w-1/2 bg-gradient-to-br from-indigo-600 to-purple-600 ${isLogin ? 'order-first' : 'order-last'}`}>
+          <div className="w-full h-64 md:h-auto flex items-center justify-center p-8">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -59,12 +58,12 @@ export default function Home() {
                 initial={{ scale: 0.8 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.5, type: "spring" }}
-                className="w-64 h-64 mx-auto bg-white/20 rounded-full backdrop-blur-sm flex items-center justify-center"
+                className="w-48 h-48 md:w-64 md:h-64 mx-auto bg-white/20 rounded-full backdrop-blur-sm flex items-center justify-center"
               >
                 <img 
                   src={isLogin ? "/pho1.jpg" : "/pho2.jpg"} 
                   alt={isLogin ? "Login Illustration" : "Signup Illustration"}
-                  className="w-full h-full rounded-full "
+                  className="w-full h-full rounded-full object-cover"
                 />
               </motion.div>
             </motion.div>
@@ -72,13 +71,14 @@ export default function Home() {
         </div>
 
         {/* Form Section */}
-        <div className="w-full md:w-1/2 p-8 md:p-12">
+        <div className="w-full md:w-1/2 p-6 md:p-12 flex items-center">
           <motion.div
             key={isLogin ? "login" : "signup"}
             variants={formVariants}
             initial="hidden"
             animate="visible"
             transition={{ duration: 0.5 }}
+            className="w-full"
           >
             {isLogin ? (
               <div>
@@ -95,6 +95,7 @@ export default function Home() {
                       className="w-full px-4 py-3 border-b-2 border-gray-300 focus:border-indigo-500 outline-none transition placeholder-gray-400"
                     />
                   </motion.div>
+
                   <motion.div
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -106,6 +107,7 @@ export default function Home() {
                       className="w-full px-4 py-3 border-b-2 border-gray-300 focus:border-indigo-500 outline-none transition placeholder-gray-400"
                     />
                   </motion.div>
+
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -119,6 +121,7 @@ export default function Home() {
                     </button>
                   </motion.div>
                 </form>
+
                 <div className="mt-6 text-center">
                   <p className="text-gray-600 mb-4">Or continue with</p>
                   <div className="flex justify-center space-x-4">
@@ -138,6 +141,7 @@ export default function Home() {
                     </motion.button>
                   </div>
                 </div>
+
                 <motion.p 
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -168,6 +172,7 @@ export default function Home() {
                       className="w-full px-4 py-3 border-b-2 border-gray-300 focus:border-indigo-500 outline-none transition placeholder-gray-400"
                     />
                   </motion.div>
+
                   <motion.div
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -179,6 +184,7 @@ export default function Home() {
                       className="w-full px-4 py-3 border-b-2 border-gray-300 focus:border-indigo-500 outline-none transition placeholder-gray-400"
                     />
                   </motion.div>
+
                   <motion.div
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -190,6 +196,7 @@ export default function Home() {
                       className="w-full px-4 py-3 border-b-2 border-gray-300 focus:border-indigo-500 outline-none transition placeholder-gray-400"
                     />
                   </motion.div>
+
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -203,6 +210,7 @@ export default function Home() {
                     </button>
                   </motion.div>
                 </form>
+
                 <motion.p
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
