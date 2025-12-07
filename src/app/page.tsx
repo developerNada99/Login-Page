@@ -48,7 +48,7 @@ export default function Home() {
               transition={{ delay: 0.3, duration: 0.5 }}
               className="text-center"
             >
-              <h2 className="text-3xl font-bold text-white mb-4">
+              <h2 className="text-3xl font-bold text-white mb-4 max-md:text-2xl">
                 {isLogin ? 'Welcome Back!' : 'Join Us Today!'}
               </h2>
               <p className="text-white/80 mb-8">
